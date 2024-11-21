@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokemon圖鑑</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="54.png" type="image/x-icon"/>
+</head>
+<body>
+
+
+ 
+
+
+    <div class="head">
+        
+        <img src="Pokémon_logo.svg.png" alt="" class="waitLogo">
+        <div class="progress-container">
+            <progress id="progress-bar" max="100" value="0"></progress>
+        </div>
+    </div>
+    <div class="search">
+        <div class="title">
+        <div class="logo"><img src="Pokémon_logo.svg.png" alt=""></div>
+        <div class="titleRight">
+        <input type="text" placeholder="請輸入要尋找的寶可夢" class="input">
+        <button class="searchBtn">搜尋</button>
+        <button value='reset' class="reset">重置</button> 
+    </div>
+    </div>
+        <div class="type">   
+        <ul>
+                
+        </ul>
+        </div>
+        <div class="pokemon-list">
+        <ul></ul>
+        </div>
+        </div>
+
+    <ul class="list">
+    </ul>
+
+    <ul class="search-list"></ul>
+    <script src="js/index.js"></script>
+    <script src="js/classification.js"></script>
+    <script src="js/pokemonIntro.js"></script>
+</body>
+</html>
