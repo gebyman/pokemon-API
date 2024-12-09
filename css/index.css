@@ -132,3 +132,79 @@ body {
     height: 100px;
     transform: translateY(-50%);
 }
+.pokemon-detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.detail-card {
+    background-color: rgb(90, 97, 93);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.detail-card h2{
+    font-size: 36px;
+    color: #3e3838;
+}
+.detail-card ul {
+    margin: 0;
+    padding: 0;    
+}
+.detail-card ul li{
+    list-style: none;
+}
+.detail-card img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.detail-card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #355046;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.types{
+    font-size: 24px;
+}
+.typeName{
+    color: #FFF;
+    font-size: 24px;
+}
+.stat{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 36px;
+    color:#ffffff;
+}
+.skill{
+    font-size: 24px;
+}
+.skillName{
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+.ability{
+    font-size: 36px;
+    color: #3e3838;
+}
+.imgback{
+    background: #d5e8c2;
+    border-radius: 15px;
+    
+}
