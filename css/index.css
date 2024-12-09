@@ -1,5 +1,5 @@
 body {
-    background-color: #5e8b7a;
+    background-color: #4c6d61;
 }
 
 .pokemon-list, .list,.search-list {
@@ -50,6 +50,23 @@ body {
     left: 50%; 
     transform: translate(-50%, -50%); 
     z-index: 1000;
+    
+}
+
+.logo {
+    font-size: 10rem;
+    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;       
+    background-clip: text;               
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 6px;
+}
+.logo0 img{
+    width: 360px;
+    height: 120px;
 }
 
 .pokeball {
@@ -114,8 +131,4 @@ body {
     right: 0;
     height: 100px;
     transform: translateY(-50%);
-}
-.logo img{
-    width: 300px;
-    height: 100px;
 }

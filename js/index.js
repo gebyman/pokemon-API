@@ -1,50 +1,45 @@
 const list = document.querySelector('.list');
 const pokemonData = [];
-const progressBar = document.getElementById('progress-bar')
-const pokemonCount = 520;
-const logo = document.querySelector('.waitLogo')
+const pokemonCount = 720;
+const logo = document.querySelector('.logo')
 const pokeball = document.querySelector('.pokeball')
 const search = document.querySelector('.search')
+const body =document.body
 
 
 
 
 
-
-
-const fetchPokemonData = async function () {
+async function fetchPokemonData() {
     try {
-        
-        progressBar.max=pokemonCount;
- 
+        const requests = [];
+
         for (let i = 1; i <= pokemonCount; i++) {
-            const pokemonRes = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
-            
-            pokemonData.push({
-                id: pokemonRes.data.id,
-                image: pokemonRes.data.sprites.other['official-artwork'].front_default,
-                name: pokemonRes.data.name,
-                type : pokemonRes.data.types[0].type.name,
-            });
-
-
-
-            //更更更更新進度條
-            progressBar.value= i;
-
-            //完成然後把它隱藏
-            if(i===pokemonCount){
-                progressBar.style.display='none'
-                logo.style.display='none'
-                
-                search.style.display='inline'
-            }
+            requests.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)); // 添加所有請求到陣列
         }
-        renderData();
+
+        const responses = await Promise.all(requests); // 併行執行請求
+
+        responses.forEach(response => {
+            pokemonData.push({
+                id: response.data.id,
+                image: response.data.sprites.other['official-artwork'].front_default,
+                name: response.data.name,
+                type: response.data.types[0].type.name,
+            });
+        });
+
+        body.style.backgroundColor ='#5e8b7a';
+        logo.style.display = 'none';
+        search.style.display = 'inline';
+
+        renderData(); // 渲染數據
     } catch (error) {
-        console.log('Error fetching Pokemon data:', error);
+        console.error('Error fetching Pokémon data:', error);
     }
-};
+}
+
+
 
 
 //渲染用

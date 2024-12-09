@@ -38,11 +38,9 @@ function render(){
         buttons.addEventListener('click',function(e){  
             selectPokemon=[];
           pokemonData.forEach(function(item){
-            if(e.target.value !== item.type){
-               console.log('沒有相符的寶可夢')    
+            if(e.target.value !== item.type){    
                return 
             }else if(e.target.value == item.type){
-                console.log(item.type)
                 selectPokemon.push({
                     image:item.image,
                     name:item.name,
